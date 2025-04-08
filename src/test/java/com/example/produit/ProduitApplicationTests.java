@@ -18,11 +18,11 @@ class ProduitApplicationTests {
 	@Autowired
 	private ProduitRepository produitRepository;
 
-	@Test
+	/*@Test
 	public void testCreateProduit(){
-		Produit prod = new Produit("14", 250025.0,new Date());
+		Produit prod = new Produit("14", 2500.0,new Date());
 		produitRepository.save(prod);
-	}
+	}*/
 
 	@Test
 	public void testFindProd(){

@@ -1,9 +1,6 @@
 package com.example.produit.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -16,18 +13,23 @@ public class Produit {
     private Double prixProduit;
     private Date dateCreation;
 
-    public Produit(Long idProduit, String nomProduit, Double prixProduit, Date dateCreation) {
+    @ManyToOne
+    private Categorie categorie;
+
+    public Produit(Long idProduit, String nomProduit, Double prixProduit, Date dateCreation, Categorie categorie) {
         this.idProduit = idProduit;
         this.nomProduit = nomProduit;
         this.prixProduit = prixProduit;
         this.dateCreation = dateCreation;
+        this.categorie = categorie;
     }
 
-    public Produit(String nomProduit, Double prixProduit, Date dateCreation) {
+    public Produit(String nomProduit, Double prixProduit, Date dateCreation, Categorie categorie) {
         super();
         this.nomProduit = nomProduit;
         this.prixProduit = prixProduit;
         this.dateCreation = dateCreation;
+        this.categorie = categorie;
     }
     public Produit(){}
 
@@ -71,5 +73,13 @@ public class Produit {
 
     public void setDateCreation(Date dateCreation) {
         this.dateCreation = dateCreation;
+    }
+
+    public Categorie getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
     }
 }
