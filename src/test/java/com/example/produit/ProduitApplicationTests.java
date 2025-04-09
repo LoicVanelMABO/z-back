@@ -53,5 +53,10 @@ class ProduitApplicationTests {
 		for (Produit p:prods)
 			System.out.println(p);
 	}
+	@Test
+	public void findProdByName(){
+		Produit p = produitRepository.findByNomProduit("14");
+		System.out.println(p);
+	}
 
 }

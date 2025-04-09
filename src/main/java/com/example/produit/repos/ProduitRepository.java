@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProduitRepository extends JpaRepository<Produit,Long> {
     void delete(Produit d);
+    Produit findByNomProduit(String nomProduit);
 }
