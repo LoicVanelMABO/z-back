@@ -1,12 +1,11 @@
 package com.example.produit.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
+@ToString(exclude = "produits")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

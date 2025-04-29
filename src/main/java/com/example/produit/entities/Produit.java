@@ -1,9 +1,16 @@
 package com.example.produit.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.Date;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Produit {
     @Id
@@ -16,7 +23,7 @@ public class Produit {
     @ManyToOne
     private Categorie categorie;
 
-    public Produit(Long idProduit, String nomProduit, Double prixProduit, Date dateCreation, Categorie categorie) {
+    /*public Produit(Long idProduit, String nomProduit, Double prixProduit, Date dateCreation, Categorie categorie) {
         this.idProduit = idProduit;
         this.nomProduit = nomProduit;
         this.prixProduit = prixProduit;
@@ -30,10 +37,10 @@ public class Produit {
         this.prixProduit = prixProduit;
         this.dateCreation = dateCreation;
         this.categorie = categorie;
-    }
-    public Produit(){}
+    }*/
+    //public Produit(){}
 
-    @Override
+    /*@Override
     public String toString() {
         return "Produit{" +
                 "idProduit=" + idProduit +
@@ -81,5 +88,5 @@ public class Produit {
 
     public void setCategorie(Categorie categorie) {
         this.categorie = categorie;
-    }
+    }*/
 }

@@ -1,5 +1,6 @@
 package com.example.produit;
 
+import com.example.produit.entities.Categorie;
 import com.example.produit.entities.Produit;
 import com.example.produit.repos.ProduitRepository;
 import org.junit.jupiter.api.Test;
@@ -30,7 +31,7 @@ class ProduitApplicationTests {
 		System.out.println(d);
 	}
 
-	@Test
+	/*@Test
 	public void updateProd(){
 		Produit d = produitRepository.findById(12l).get();
 		System.out.println(d);
@@ -39,7 +40,7 @@ class ProduitApplicationTests {
 		produitRepository.save(d);
 		Produit d2 = produitRepository.findById(12l).get();
 		System.out.println(d2);
-	}
+	}*/
 
 	@Test
 	public void deleteProd(){
@@ -74,9 +75,27 @@ class ProduitApplicationTests {
 
 	@Test
 	public void findProdByNomPrix(){
-		List<Produit> prods = produitRepository.findByNomPrix("14",1.0);
+		List<Produit> prods = produitRepository.findByNomPrix("PC1",1.0);
 		for (Produit p:prods)
 			System.out.println(p);
+	}
+
+	@Test
+	public void findProduitByCat(){
+		Categorie cat = new Categorie();
+		cat.setIdCat(1l);
+		List<Produit> prods = produitRepository.findByEntiteCategorie(cat);
+		for(Produit p:prods) {
+            System.out.println(p);
+        }
+	}
+
+	@Test
+	public void findByCategorieIdCat(){
+		List<Produit> prods = produitRepository.findByCategorieIdCat(1L);
+		for(Produit p : prods){
+			System.out.println(p);
+		}
 	}
 
 }
