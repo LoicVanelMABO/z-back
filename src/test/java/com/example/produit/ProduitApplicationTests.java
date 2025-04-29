@@ -59,4 +59,24 @@ class ProduitApplicationTests {
 		System.out.println(p);
 	}
 
+	@Test
+	public void findProdByNameAndPrixProduit(){
+		Produit p = produitRepository.findByNomProduitAndPrixProduit("14",250025);
+		System.out.println(p);
+	}
+
+	@Test
+	public void findProdByNameContains(){
+		List<Produit> prods = produitRepository.findByNomProduitContains("1");
+		for (Produit p:prods)
+			System.out.println(p);
+	}
+
+	@Test
+	public void findProdByNomPrix(){
+		List<Produit> prods = produitRepository.findByNomPrix("14",1.0);
+		for (Produit p:prods)
+			System.out.println(p);
+	}
+
 }
