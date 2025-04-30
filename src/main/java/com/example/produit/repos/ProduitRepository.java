@@ -27,4 +27,10 @@ public interface ProduitRepository extends JpaRepository<Produit,Long> {
     List<Produit> findByEntiteCategorie(@Param("cat") Categorie categorie);
 
     List<Produit> findByCategorieIdCat(Long id);
+
+    //Trier les data Asc ou Desc
+    List<Produit> findByOrderByNomProduitDesc();
+
+    //Tier les data JPQL
+    //List<Produit>
 }
