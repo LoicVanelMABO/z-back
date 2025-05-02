@@ -98,4 +98,22 @@ class ProduitApplicationTests {
 		}
 	}
 
+	@Test
+	public void findByOrderByNomProduitAsc(){
+		List<Produit> produits = produitRepository.findByOrderByNomProduitDesc();
+		System.out.println("les produits par ordre alphabétique");
+		for (Produit p : produits){
+			System.out.println(p);
+		}
+	}
+
+	@Test
+	public void ascNomproduit(){
+		List<Produit> produits = produitRepository.findByOrderNomProduitAscJPQL();
+		System.out.println("les produits par ordre alphabétique 2 jpql ");
+		for (Produit p : produits){
+			System.out.println(p);
+		}
+	}
+
 }

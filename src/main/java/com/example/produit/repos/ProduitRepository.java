@@ -32,5 +32,6 @@ public interface ProduitRepository extends JpaRepository<Produit,Long> {
     List<Produit> findByOrderByNomProduitDesc();
 
     //Tier les data JPQL
-    //List<Produit>
+    @Query("select p from Produit p order by p.nomProduit ASC, p.prixProduit DESC")
+    List<Produit> findByOrderNomProduitAscJPQL();
 }
